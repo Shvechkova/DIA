@@ -1,0 +1,647 @@
+@import "vars";
+@import "fonts";
+@import "reset";
+@import "libs";
+@import "global";
+
+.nav-stiky {
+  position: fixed;
+  transform: translateY(-100%);
+  transition: 0.9s;
+  z-index: 100;
+  left: 0;
+  right: 0;
+  top: 0;
+  background: #fff;
+  backdrop-filter: blur(13px);
+
+  height: 70px;
+}
+.nav-sticky--active {
+  z-index: 100;
+  transform: translateY(0);
+}
+.header {
+  background-image: url("../images/bg1.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 800px;
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-height: 70px;
+    margin-top: 15px;
+  }
+
+  &__tel {
+    @extend %Montserrat700;
+    font-size: 15px;
+    color: #242424;
+    opacity: 0.7;
+    padding-right: 51px;
+  }
+  &__social {
+    align-items: center;
+    vertical-align: middle;
+    &-tg {
+      padding: 0 20px 0 15px;
+    }
+  }
+}
+
+.nav {
+  &__menu {
+    display: flex;
+  }
+  &__li + .nav__li {
+    padding-left: 30px;
+  }
+
+  &__link {
+    @extend %Montserrat700;
+    color: #242424;
+    opacity: 0.7;
+  }
+}
+
+.btn__header {
+  @extend %button;
+  width: 196px;
+  height: 40px;
+  // vertical-align: middle;
+}
+
+.header__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 730px;
+
+  &-title {
+    max-width: 810px;
+    text-align: center;
+    line-height: 60px;
+    padding-bottom: 30px;
+  }
+  &-price {
+    padding-bottom: 50px;
+  }
+  &-benefits {
+    padding-bottom: 45px;
+    // max-width: 294px;
+    text-align: center;
+    font-size: 22px;
+  }
+}
+
+.design {
+  &__item {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-gap: 20px;
+    align-items: center;
+  }
+
+  &__item-info {
+    max-width: 500px;
+  }
+  &__item-title {
+    line-height: 55px;
+    font-size: 40px;
+    padding-bottom: 40px;
+    text-align: left;
+  }
+
+  &__item-text {
+    line-height: 30px;
+    font-size: 17px;
+  }
+  &__item-img {
+    img {
+      margin: 0 0 0 auto;
+    }
+    max-height: 550px;
+  }
+}
+
+.design__item-text--bold {
+  @extend %Montserrat700;
+  padding: 10px 0;
+}
+.design__item-text--max {
+  max-width: 700px;
+}
+
+.benefits {
+  &__title {
+    margin: 50px;
+  }
+
+  &__cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-column-gap: 30px;
+  }
+  &__card {
+    display: flex;
+    margin-bottom: 50px;
+    align-items: center;
+  }
+  &__card-text {
+    // max-width: 430px;
+  }
+  &__card-img {
+    position: relative;
+    margin-right: 25px;
+  }
+  &__card-img--bg {
+    height: 144px;
+    width: 110px;
+  }
+  &__card-img--icon {
+    position: absolute;
+    top: 30px;
+    left: 20px;
+  }
+}
+
+.benefits__card-big{
+  width: 100%;
+  grid-column: span 2;
+}
+
+.btn__benefits {
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+.project {
+  text-align: center;
+  margin: 100px 0;
+}
+.project__item {
+  padding-left: 10px;
+
+  position: relative;
+  & img {
+  }
+}
+
+.project__slaider-text {
+  position: absolute;
+  bottom: 0;
+
+  right: 0;
+
+  // width: 100%;
+  background-color: rgba(53, 53, 53, 0.744);
+  color: #fff;
+  text-align: end;
+  font-size: 15px;
+  padding: 20px 10px 10px 10px;
+  margin-right: -20px;
+  text-transform: uppercase;
+  @extend %Montserrat600;
+}
+
+.prev,
+.next {
+  position: absolute;
+  top: 50%;
+  height: 30px;
+  width: 30px;
+  z-index: 1;
+  cursor: pointer;
+  background-color: #fff;
+  border-radius: 50%;
+}
+
+.next {
+  right: -50px;
+}
+.prev {
+  left: -50px;
+}
+
+.estetic {
+  text-align: center;
+  &__items {
+    margin: 104px 0;
+    display: inline-block;
+    height: 234px;
+  }
+  &__img {
+    display: inline-block;
+    vertical-align: middle;
+  }
+  &__text-item {
+    display: inline-block;
+    max-width: 448px;
+    vertical-align: middle;
+    text-align: left;
+    margin: auto 30px;
+  }
+}
+
+.how {
+  text-align: center;
+  &__grid {
+    padding-top: 44px;
+    text-align: left;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 30px;
+    grid-row-gap: 80px;
+  }
+  &__pic {
+    position: relative;
+  }
+  &__number {
+    z-index: -1;
+    position: absolute;
+    line-height: 30px;
+    font-size: 120px;
+    @extend %Montserrat100;
+    color: #ececec;
+    bottom: 15px;
+    left: 0;
+  }
+}
+
+.btn__how {
+  margin: 50px 0 100px 0;
+}
+
+.designer {
+  padding: 30px 0 70px;
+  &__wrap {
+    display: flex;
+  }
+  &__img {
+    flex: 0 0 auto;
+    margin-right: 100px;
+  }
+  &__item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  &__post {
+    padding: 0;
+  }
+  &__name {
+    text-align: left;
+  }
+}
+
+.designer__prefer {
+  margin: 10px 0;
+  &-item {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+  }
+}
+.designer__prefer-item {
+  &::before {
+    content: "";
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    background: url(../images/check.svg) no-repeat;
+    padding-left: 35px;
+  }
+}
+.designer__diplom {
+  &_galleri {
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+margin-bottom: 50px;
+
+    flex-wrap: wrap;
+    & img {
+      padding-bottom: 15px;
+      height: 100%;
+    }
+  }
+}
+.rate{
+  margin-bottom: 40px;
+  &__title{
+    margin-bottom: 20px;
+  }
+}
+.rate__card {
+  &-wrap {
+    height: 720px;
+    width: 362px;
+    border: 1px solid #e1e1e1;
+    padding: 0 15px;
+   
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    text-align: center;
+  }
+  &-price {
+    padding: 0;
+  }
+  &-title {
+    font-size: 25px;
+    padding-top: 15px;
+    
+  }
+  &-tasks {
+    text-align: left;
+  }
+
+  &-task {
+    display: flex;
+    align-items: center;
+    padding: 7px 0;
+    line-height: 16px;
+    // font-size: 13px;
+    &::before {
+      content: "";
+      display: inline-block;
+      width: 25px;
+      height: 25px;
+      background: url(../images/check.svg) no-repeat;
+      padding-left: 35px;
+    }
+  }
+}
+
+.rate__card-btn {
+  &-text {
+    padding: 0;
+  }
+}
+
+.btn-rate {
+  margin: 30px 0 36px;
+}
+
+.why__grid {
+  padding: 100px 0 60px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 60px 30px;
+}
+.why__card-title {
+  font-size: 15px;
+}
+.why__card-text {
+  line-height: 25px;
+}
+
+.realize {
+  &__wrap {
+    display: flex;
+    padding: 50px 0 100px;
+  }
+  &_card {
+    width: 49%;
+  }
+  &_img {
+    margin: 0 40px;
+  }
+  &__items {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}
+
+.realize__list {
+  &::before {
+    content: "";
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    background: url(../images/check.svg) no-repeat;
+    padding-left: 35px;
+  }
+}
+
+.how-work {
+  &-grid {
+    padding: 60px 0 100px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 84px;
+  }
+  &__card-img {
+    display: flex;
+    &1 {
+      padding-right: 90px;
+    }
+  }
+}
+
+.partners {
+  padding-bottom: 100px;
+
+  &__title {
+    margin-bottom: 70px;
+  }
+}
+
+.partners__card {
+}
+.partners__card-wrap {
+  border: 2px solid #e1e1e1;
+  display: flex;
+  height: 90px;
+  width: 264px;
+  justify-content: center;
+  align-items: center;
+}
+
+.prev1,
+.next1 {
+  position: absolute;
+  top: 33.33%;
+  height: 30px;
+  width: 30px;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.next1 {
+  right: -50px;
+}
+.prev1 {
+  left: -50px;
+}
+
+.review {
+  margin-bottom: 100px;
+  &__inner {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    
+  }
+  &__images {
+    margin-right: 20px;
+  }
+  &__imGG {
+    padding: 15px;
+  }
+  &__img {
+    width: 300px;
+    height: 150px;
+    object-fit: cover;
+  }
+  &__items {
+    margin-left: 20px;
+    width: 420px;
+  }
+  &__name1 {
+    font-size: 25px;
+    line-height: 55px;
+    @extend %Montserrat700;
+  }
+  &__text {
+    margin-bottom: 20px;
+  }
+}
+.contacts__text {
+  text-align: center;
+}
+
+.contacts {
+  margin-bottom: 100px;
+  &__items {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__tel {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    & a {
+      @extend %Montserrat700;
+      font-size: 24px;
+      color: black;
+      padding-left: 30px;
+    }
+  }
+}
+
+.contacts__sochial {
+  display: flex;
+  flex-direction: column;
+  margin-top: 44px;
+  & a {
+    @extend %Montserrat700;
+    font-size: 15px;
+    color: black;
+    display: flex;
+    align-items: center;
+    padding: 12px 0;
+    & img {
+      padding-right: 20px;
+    }
+  }
+}
+
+.modal {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.61);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2000;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+   display: none;
+
+  &__inner {
+    position: relative;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 555px;
+    height: 555px;
+    border-radius: 14px;
+    background-color: #fff;
+    padding: 30px 70px;
+  }
+
+  &__content-title {
+    & p {
+      font-size: 18px;
+    }
+    padding: 20px 0;
+  }
+
+  &__content-text {
+    padding-bottom: 40px;
+    & p {
+      line-height: 1.2;
+      @extend %Montserrat700;
+      font-size: 18px;
+      color: black;
+    }
+  }
+}
+
+.form-modal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  & input {
+    @extend %Montserrat700;
+    padding-left: 25px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-bottom: 15px;
+    width: 100%;
+  }
+  & button {
+    margin-top: 20px;
+  }
+}
+
+.modal__btn-close {
+  position: absolute;
+  top: -30px;
+  right: -30px;
+  cursor: pointer;
+}
+
+.modal--activ {
+  display: flex;
+}
+
+
+
+
+.contacts__map {
+    padding: 20px;
+    width: 700px;
+  }
+
+.logo_burger{
+display: none;
+}
+
+@import "media";

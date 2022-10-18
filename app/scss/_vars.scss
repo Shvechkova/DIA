@@ -1,0 +1,43 @@
+$assent:#FFBF00;
+$title-color:#242424;
+
+%Montserrat100{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 100;
+    
+}
+%Montserrat400{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    
+}
+%Montserrat600{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+}
+%Montserrat700{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+}
+
+%textbtn{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+   color: #242424;
+}
+
+
+%button{
+ background-color: $assent;   
+ @extend %Montserrat600;
+ border: none;
+ font-size: 13px;
+ color:$title-color;
+ transition: 0.5;
+ 
+ 
+}
+
+
+
+
